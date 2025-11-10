@@ -31,7 +31,7 @@ RUN addgroup --system --gid 114514 nodejs
 RUN adduser --system --uid 114514 hono
 
 # 创建日志目录
-RUN mkdir -p /app/logs && chown -R hono:nodejs /app/logs
+
 RUN ln -s /app/logs /logs
 
 # 复制文件
