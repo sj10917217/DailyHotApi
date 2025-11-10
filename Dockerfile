@@ -35,8 +35,8 @@ RUN adduser --system --uid 114514 hono
 RUN ln -s /app/logs /logs
 
 # 复制文件
-COPY --from=builder --chown=hono:nodejs /app/node_modules /app/node_modules
-COPY --from=builder --chown=hono:nodejs /app/dist /app/dist
+COPY --from=builder /app/node_modules /app/node_modules
+COPY --from=builder /app/dist /app/dist
 COPY --from=builder /app/public /app/public
 COPY --from=builder /app/.env /app/.env
 COPY --from=builder /app/package.json /app/package.json
